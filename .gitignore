@@ -1,0 +1,14 @@
+.DS_Store
+/test/screenshots
+/test/videos
+
+npm-debug.log*
+report
+selenium-debug.log
+.npmrc
+
+# IntelliJ Files
+.idea
+
+# VSCode Files
+.history
