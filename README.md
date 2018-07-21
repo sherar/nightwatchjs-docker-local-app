@@ -1,33 +1,32 @@
-# NightwatchJS POC with local app
+# Nightwatch.js + Nginx (local app)
 
-## Setting up the test
+## Usage
 
-### Install Node (if not already installed)
+Run the NightwatchJS tests:
 
-Visit: [Node.js](https://nodejs.org/en/download/)
-for instructions on this step
-
-### Install Java Runtime Environment
-
-Visit: [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-for instructions on this step
-
-### Install Dependencies
-
-```bash
-npm install
+```sh
+docker-compose run --rm nightwatch
 ```
 
-### Run tests
+A video of the test will be stored in `test/videos`.  
+Video recording is done with
+[nightwatch-video-recorder](https://github.com/blueimp/nightwatch-video-recorder).
 
-```bash
-npm run test:e2e
+Connect to the chromedriver via VNC:
+
+```sh
+open vnc://user:secret@localhost:5900
 ```
 
-### Report
+The VNC password can be changed via `VNC_PASSWORD` environment variable for the
+chromedriver container.
 
-Report is available on /report folder
+Stop and remove the docker-compose container set:
 
-### Notes
+```sh
+docker-compose down -v
+```
 
-Please look at NOTES.md for Testing Framework & App under test notes
+## App
+
+Local Employees app is running on a separate Nginx container
